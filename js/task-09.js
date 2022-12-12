@@ -12,7 +12,9 @@ refs.btnEl.addEventListener('click', onColorChange);
 
 console.log(refs.btnEl)
 
+
 function onColorChange() {
-    refs.bodyEl.style.backgroundColor = `${getRandomHexColor()}`;
-    refs.spanEl.textContent = getRandomHexColor();
+    const colorsHex = getRandomHexColor();
+    refs.bodyEl.style.backgroundColor =  colorsHex;
+    refs.spanEl.textContent = colorsHex;
 }
