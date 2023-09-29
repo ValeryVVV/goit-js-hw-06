@@ -1,26 +1,46 @@
 let counterValue = 0;
 
 const refs = {
-    decrement: document.querySelector("button[data-action='decrement']"),
-    increment: document.querySelector("button[data-action='increment']"),
-    valueRef: document.querySelector('#value'),
-}
-
-const countDecrement = function() {
-    counterValue -= 1;
-    refs.valueRef.textContent = counterValue;
+  decrement: document.querySelector("button[data-action='decrement']"),
+  increment: document.querySelector("button[data-action='increment']"),
+  valueEl: document.querySelector("#value"),
 };
 
-const countIncrement = function() {
-    counterValue += 1;
-    refs.valueRef.textContent = counterValue;
-}
+const counterDec = () => {
+  const count = (counterValue -= 1);
+  refs.valueEl.textContent = count;
+};
 
-refs.decrement.addEventListener('click', countDecrement);
-refs.increment.addEventListener('click', countIncrement);
+const counterInc = () => {
+  const count = (counterValue += 1);
+  refs.valueEl.textContent = count;
+};
 
+refs.decrement.addEventListener("click", counterDec);
+refs.increment.addEventListener("click", counterInc);
 
-console.log(countDecrement);
-console.log(countIncrement);
+// let counterValue = 0;
 
-console.log(counterValue)
+// const refs = {
+//     decrement: document.querySelector("button[data-action='decrement']"),
+//     increment: document.querySelector("button[data-action='increment']"),
+//     valueRef: document.querySelector('#value'),
+// }
+
+// const countDecrement = function() {
+//     counterValue -= 1;
+//     refs.valueRef.textContent = counterValue;
+// };
+
+// const countIncrement = function() {
+//     counterValue += 1;
+//     refs.valueRef.textContent = counterValue;
+// }
+
+// refs.decrement.addEventListener('click', countDecrement);
+// refs.increment.addEventListener('click', countIncrement);
+
+// console.log(countDecrement);
+// console.log(countIncrement);
+
+// console.log(counterValue)
